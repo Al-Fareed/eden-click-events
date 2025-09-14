@@ -46,12 +46,12 @@ const Navbar = () => {
             >
               Events
             </a>
-            <button
-              onClick={() => handleNavClick("contact")}
+            <a
+              href="/contact"
               className="text-gray-700 hover:text-emerald transition-colors duration-300 font-medium"
             >
               Contact
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -89,12 +89,12 @@ const Navbar = () => {
               >
                 Events
               </a>
-              <button
-                onClick={() => handleNavClick("contact")}
+              <a
+                href="/contact"
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald hover:bg-gray-50 transition-colors duration-300"
               >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
         )}

@@ -2,14 +2,16 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Eye, CheckCircle, Star } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate()
   const handleBookEvent = () => {
-    console.log("Book Your Event clicked");
+    navigate('/events');
   };
 
   const handleViewEvents = () => {
-    console.log("View Events clicked");
+    navigate('/events');
   };
 
   return (

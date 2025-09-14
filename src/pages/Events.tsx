@@ -189,7 +189,9 @@ const Events = () => {
               >
                 Book Now
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button 
+              onClick={() => navigate('/contact')}
+              variant="outline" className="w-full">
                 Contact Us
               </Button>
             </div>

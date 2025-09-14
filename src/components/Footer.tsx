@@ -85,7 +85,7 @@ const Footer = () => {
               <p className="mt-1">Merchant Name: Mourise Dsouza</p>
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#privacy" className="text-muted-foreground hover:text-emerald transition-colors">
+              <a href="/privacy" className="text-muted-foreground hover:text-emerald transition-colors">
                 Privacy Policy
               </a>
               <a href="#terms" className="text-muted-foreground hover:text-emerald transition-colors">

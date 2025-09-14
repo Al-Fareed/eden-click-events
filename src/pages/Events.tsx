@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Heart, Briefcase, GraduationCap, Palette, CheckCircle } from "lucide-react";
@@ -150,6 +151,8 @@ const Events = () => {
     }
   ];
 
+  const navigate = useNavigate();
+
   const EventCard = ({ event }: { event: any }) => (
     <div className="h-full">
       <Card className="h-full flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300">
@@ -180,7 +183,10 @@ const Events = () => {
               </div>
             )}
             <div className="space-y-2">
-              <Button className="w-full bg-background text-foreground border hover:bg-muted">
+              <Button 
+                className="w-full bg-background text-foreground border hover:bg-muted"
+                onClick={() => navigate('/cart')}
+              >
                 Book Now
               </Button>
               <Button variant="outline" className="w-full">

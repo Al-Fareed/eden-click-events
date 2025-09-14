@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Package, Shield, Users, Award } from "lucide-react";
+import { CheckCircle, Package, Shield, Users, Award, CreditCard, Smartphone } from "lucide-react";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -17,8 +19,11 @@ const Cart = () => {
     streetAddress: "",
     apartment: "",
     city: "",
-    state: ""
+    state: "",
+    email: "",
+    orderNotes: ""
   });
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -168,6 +173,103 @@ const Cart = () => {
                       onChange={(e) => handleInputChange("state", e.target.value)}
                     />
                   </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Additional Information */}
+            <Card>
+              <CardHeader>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                    <Package className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Additional Information</CardTitle>
+                    <p className="text-sm text-muted-foreground">Notes about your order (optional)</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="email">Email Address *</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="john.doe@example.com"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="orderNotes">Order Notes</Label>
+                  <Textarea
+                    id="orderNotes"
+                    placeholder="Notes about your order, e.g. special notes for delivery."
+                    value={formData.orderNotes}
+                    onChange={(e) => handleInputChange("orderNotes", e.target.value)}
+                    rows={4}
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Payment Method */}
+            <Card>
+              <CardHeader>
+                <div className="flex items-center">
+                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                    <CreditCard className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-lg">Payment Method</CardTitle>
+                    <p className="text-sm text-muted-foreground">Choose your preferred payment gateway</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label>Select Payment Gateway *</Label>
+                  <RadioGroup 
+                    value={selectedPaymentMethod} 
+                    onValueChange={setSelectedPaymentMethod}
+                    className="mt-3"
+                  >
+                    <div className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                      <RadioGroupItem value="phonePe" id="phonePe" />
+                      <div className="flex items-center space-x-3 flex-1">
+                        <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+                          <Smartphone className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <Label htmlFor="phonePe" className="font-medium cursor-pointer">PhonePe</Label>
+                          <p className="text-sm text-muted-foreground">India's trusted digital payments</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center space-x-3 p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                      <RadioGroupItem value="paytm" id="paytm" />
+                      <div className="flex items-center space-x-3 flex-1">
+                        <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                          <CreditCard className="w-4 h-4 text-white" />
+                        </div>
+                        <div>
+                          <Label htmlFor="paytm" className="font-medium cursor-pointer">Paytm</Label>
+                          <p className="text-sm text-muted-foreground">India's most trusted payments platform</p>
+                        </div>
+                      </div>
+                    </div>
+                  </RadioGroup>
+                </div>
+
+                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  → Continue to Payment
+                </Button>
+
+                <div className="flex items-center justify-center text-sm text-muted-foreground mt-3">
+                  <Shield className="w-4 h-4 mr-2" />
+                  Your payment information is secured with SSL encryption
                 </div>
               </CardContent>
             </Card>

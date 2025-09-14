@@ -107,6 +107,7 @@ const Services = () => {
             variant="outline" 
             size="lg"
             className="border-gold text-gold hover:bg-gold hover:text-white transition-all duration-300"
+            onClick={() => window.location.href = '/events'}
           >
             View All Events
           </Button>

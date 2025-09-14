@@ -40,12 +40,12 @@ const Navbar = () => {
             >
               About Us
             </a>
-            <button
-              onClick={() => handleNavClick("services")}
+            <a
+              href="/events"
               className="text-gray-700 hover:text-emerald transition-colors duration-300 font-medium"
             >
-              Services
-            </button>
+              Events
+            </a>
             <button
               onClick={() => handleNavClick("contact")}
               className="text-gray-700 hover:text-emerald transition-colors duration-300 font-medium"
@@ -83,12 +83,12 @@ const Navbar = () => {
               >
                 About Us
               </a>
-              <button
-                onClick={() => handleNavClick("services")}
+              <a
+                href="/events"
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald hover:bg-gray-50 transition-colors duration-300"
               >
-                Services
-              </button>
+                Events
+              </a>
               <button
                 onClick={() => handleNavClick("contact")}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-emerald hover:bg-gray-50 transition-colors duration-300"

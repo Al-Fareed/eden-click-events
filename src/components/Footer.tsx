@@ -88,10 +88,10 @@ const Footer = () => {
               <a href="/privacy" className="text-muted-foreground hover:text-emerald transition-colors">
                 Privacy Policy
               </a>
-              <a href="#terms" className="text-muted-foreground hover:text-emerald transition-colors">
+              <a href="/terms" className="text-muted-foreground hover:text-emerald transition-colors">
                 Terms of Service
               </a>
-              <a href="#refund" className="text-muted-foreground hover:text-emerald transition-colors">
+              <a href="/refund" className="text-muted-foreground hover:text-emerald transition-colors">
                 Refund Policy
               </a>
             </div>

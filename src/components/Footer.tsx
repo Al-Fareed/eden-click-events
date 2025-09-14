@@ -1,8 +1,15 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Linkedin, MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate()
+  const handleFeeConsultationBtn = () => {
+    console.log("Hi");
+    
+    navigate('/events')
+  }
   return (
     <footer className="bg-muted/50 border-t border-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -30,15 +37,15 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold text-foreground">COMPANY</h4>
             <nav className="space-y-3">
-              <a href="#about" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
+              <Link to="/about" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
                 About Us
-              </a>
-              <a href="#events" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
+              </Link>
+              <Link to="/events" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
                 Events
-              </a>
-              <a href="#contact" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
+              </Link>
+              <Link to="/contact" className="block text-muted-foreground hover:text-emerald transition-colors text-sm">
                 Contact
-              </a>
+              </Link>
             </nav>
           </div>
 
@@ -61,8 +68,10 @@ const Footer = () => {
                 <p className="text-muted-foreground text-sm">edenclicks@gmail.com</p>
               </div>
             </div>
-            
-            <Button className="bg-emerald hover:bg-emerald-dark text-white w-full sm:w-auto">
+
+            <Button
+              onClick={handleFeeConsultationBtn}
+              className="bg-emerald hover:bg-emerald-dark text-white w-full sm:w-auto">
               Free Consultation
             </Button>
 
@@ -101,7 +110,7 @@ const Footer = () => {
 
       {/* WhatsApp Float Button */}
       <div className="fixed bottom-6 right-6 z-50">
-        <Button 
+        <Button
           size="lg"
           className="rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg h-14 w-14 p-0"
         >

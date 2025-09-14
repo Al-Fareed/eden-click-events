@@ -10,26 +10,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
+import heroBackground from "@/assets/hero-background.jpg";
 const Contact = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] bg-gradient-to-br from-primary via-primary-dark to-secondary flex items-center">
+      <section
+        style={{
+          backgroundImage: `url(${heroBackground})`,
+        }}
+        className="relative min-h-[75vh] bg-gradient-to-br from-primary via-primary-dark to-secondary flex items-center">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Get In Touch With<br/>
+              Get In Touch With<br />
               <span className="text-gold">Eden Click Events</span>
             </h1>
             <p className="text-xl mb-8 text-white/90">
-              Ready to bring your event vision to life? Let's start planning something extraordinary together. 
+              Ready to bring your event vision to life? Let's start planning something extraordinary together.
               Our team is here to make your special day unforgettable.
             </p>
-            
+
             {/* Quick Contact Options */}
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="flex items-center">
@@ -47,24 +51,24 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-emerald hover:bg-emerald/90 text-white px-8"
                 onClick={() => document.getElementById('contact-methods')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Send className="mr-2 h-5 w-5" />
                 Send Message
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
-                className="border-gold text-white hover:bg-gold hover:text-black px-8"
+                className="border-gold text-white hover:bg-gold hover:text-black px-8 text-white bg-transparent"
                 asChild
               >
                 <a href="tel:+918147125819">
-                  <Phone className="mr-2 h-5 w-5" />
+                  <Phone className="mr-2 h-5 w-5 " />
                   Call Now
                 </a>
               </Button>
@@ -80,7 +84,7 @@ const Contact = () => {
             <h2 className="text-4xl font-bold text-emerald mb-4">HOW TO REACH US</h2>
             <p className="text-xl text-muted-foreground">Choose your preferred way to connect with our team</p>
           </div>
-          
+
           <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
             {/* Phone Call */}
             <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
@@ -90,7 +94,7 @@ const Contact = () => {
                 </div>
                 <h5 className="text-xl font-bold mb-4">Phone Call</h5>
                 <p className="text-muted-foreground mb-6">Speak directly with our event specialists</p>
-                <Button 
+                <Button
                   className="bg-emerald hover:bg-emerald/90 text-white w-full"
                   asChild
                 >
@@ -98,7 +102,7 @@ const Contact = () => {
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* Email */}
             <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8 text-center">
@@ -107,7 +111,7 @@ const Contact = () => {
                 </div>
                 <h5 className="text-xl font-bold mb-4">Email</h5>
                 <p className="text-muted-foreground mb-6">Send us your detailed inquiry</p>
-                <Button 
+                <Button
                   className="bg-emerald hover:bg-emerald/90 text-white w-full"
                   asChild
                 >
@@ -115,7 +119,7 @@ const Contact = () => {
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* WhatsApp */}
             <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8 text-center">
@@ -124,7 +128,7 @@ const Contact = () => {
                 </div>
                 <h5 className="text-xl font-bold mb-4">WhatsApp</h5>
                 <p className="text-muted-foreground mb-6">Quick chat for instant responses</p>
-                <Button 
+                <Button
                   className="bg-emerald hover:bg-emerald/90 text-white w-full"
                   asChild
                 >
@@ -134,7 +138,7 @@ const Contact = () => {
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* Book Meeting */}
             <Card className="h-full border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <CardContent className="p-8 text-center">
@@ -143,7 +147,7 @@ const Contact = () => {
                 </div>
                 <h5 className="text-xl font-bold mb-4">Book Meeting</h5>
                 <p className="text-muted-foreground mb-6">Schedule a free consultation</p>
-                <Button 
+                <Button
                   className="bg-emerald hover:bg-emerald/90 text-white w-full"
                   onClick={() => window.open('https://wa.me/918147125819?text=Hi, I would like to schedule a consultation for my event.', '_blank')}
                 >
@@ -163,58 +167,58 @@ const Contact = () => {
               <h2 className="text-4xl font-bold text-emerald mb-4">TELL US ABOUT YOUR EVENT</h2>
               <p className="text-xl text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
-            
+
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
                 <form className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="firstName" className="block text-sm font-semibold mb-2">First Name *</label>
-                      <input 
-                        type="text" 
-                        id="firstName" 
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
-                        required 
+                      <input
+                        type="text"
+                        id="firstName"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                        required
                       />
                     </div>
                     <div>
                       <label htmlFor="lastName" className="block text-sm font-semibold mb-2">Last Name *</label>
-                      <input 
-                        type="text" 
-                        id="lastName" 
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
-                        required 
+                      <input
+                        type="text"
+                        id="lastName"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                        required
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="email" className="block text-sm font-semibold mb-2">Email Address *</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
-                        required 
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                        required
                       />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-semibold mb-2">Phone Number</label>
-                      <input 
-                        type="tel" 
-                        id="phone" 
+                      <input
+                        type="tel"
+                        id="phone"
                         placeholder="+91 81471 25819"
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="eventType" className="block text-sm font-semibold mb-2">Event Type *</label>
-                      <select 
-                        id="eventType" 
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                      <select
+                        id="eventType"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                         required
                       >
                         <option value="">Select Event Type</option>
@@ -230,19 +234,19 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="eventDate" className="block text-sm font-semibold mb-2">Preferred Event Date</label>
-                      <input 
-                        type="date" 
-                        id="eventDate" 
-                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                      <input
+                        type="date"
+                        id="eventDate"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                       />
                     </div>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="guestCount" className="block text-sm font-semibold mb-2">Expected Guest Count</label>
-                      <select 
-                        id="guestCount" 
+                      <select
+                        id="guestCount"
                         className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                       >
                         <option value="">Select Guest Count</option>
@@ -256,8 +260,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <label htmlFor="budget" className="block text-sm font-semibold mb-2">Budget Range</label>
-                      <select 
-                        id="budget" 
+                      <select
+                        id="budget"
                         className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
                       >
                         <option value="">Select Budget Range</option>
@@ -270,22 +274,22 @@ const Contact = () => {
                       </select>
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold mb-2">Tell us about your vision *</label>
-                    <textarea 
-                      id="message" 
+                    <textarea
+                      id="message"
                       rows={5}
                       placeholder="Describe your event ideas, special requirements, venue preferences, or any questions you have..."
-                      className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none" 
-                      required 
+                      className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                      required
                     />
                   </div>
-                  
+
                   <div className="text-center">
-                    <Button 
-                      type="submit" 
-                      size="lg" 
+                    <Button
+                      type="submit"
+                      size="lg"
                       className="bg-emerald hover:bg-emerald/90 text-white px-8"
                     >
                       <Send className="mr-2 h-5 w-5" />
@@ -306,7 +310,7 @@ const Contact = () => {
             <h2 className="text-4xl font-bold text-foreground mb-4">OUR OFFICES</h2>
             <p className="text-xl text-muted-foreground">We serve clients across multiple locations</p>
           </div>
-          
+
           <div className="grid lg:grid-cols-2 gap-8 mb-16">
             {/* Main Office */}
             <Card className="border-0 shadow-lg">
@@ -322,7 +326,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center">
                     <Phone className="text-emerald mr-3" />
@@ -333,7 +337,7 @@ const Contact = () => {
                     <a href="mailto:edenclicks@gmail.com" className="text-emerald hover:underline">edenclicks@gmail.com</a>
                   </div>
                 </div>
-                
+
                 <div className="mb-6">
                   <div className="flex items-start">
                     <Clock className="text-muted-foreground mr-3 mt-1" />
@@ -347,14 +351,14 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <Button className="bg-emerald hover:bg-emerald/90 text-white">
                   <MapPin className="mr-2 h-4 w-4" />
                   Get Directions
                 </Button>
               </CardContent>
             </Card>
-            
+
             {/* 24/7 Support */}
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
@@ -365,22 +369,22 @@ const Contact = () => {
                     <p className="text-muted-foreground">For urgent matters during event planning or on event day:</p>
                   </div>
                 </div>
-                
+
                 <div className="bg-emerald text-white p-4 rounded-lg mb-4 text-center">
                   <Phone className="mx-auto mb-2 h-6 w-6" />
                   <p className="font-bold text-lg">Emergency: +91 8147125819</p>
                 </div>
-                
+
                 <p className="text-muted-foreground text-center">Available 24/7 during event week</p>
               </CardContent>
             </Card>
           </div>
-          
+
           {/* International Offices */}
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-muted-foreground">International Offices</h3>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Dubai Office */}
             <Card className="border-0 shadow-lg text-center">
@@ -395,7 +399,7 @@ const Contact = () => {
                 <p className="text-sm text-emerald font-semibold">Middle East Operations</p>
               </CardContent>
             </Card>
-            
+
             {/* Sri Lanka Office */}
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
@@ -409,7 +413,7 @@ const Contact = () => {
                 <p className="text-sm text-emerald font-semibold">South Asia Operations</p>
               </CardContent>
             </Card>
-            
+
             {/* Nepal Office */}
             <Card className="border-0 shadow-lg text-center">
               <CardContent className="p-8">
@@ -434,7 +438,7 @@ const Contact = () => {
             <h2 className="text-4xl font-bold text-foreground mb-4">FREQUENTLY ASKED QUESTIONS</h2>
             <p className="text-xl text-muted-foreground">Quick answers to common questions about our services</p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               <AccordionItem value="item-1" className="border-0 shadow-sm bg-background rounded-lg px-6">

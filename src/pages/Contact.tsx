@@ -155,6 +155,150 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section id="contact-form" className="py-20 bg-muted/10">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-emerald mb-4">TELL US ABOUT YOUR EVENT</h2>
+              <p className="text-xl text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours</p>
+            </div>
+            
+            <Card className="border-0 shadow-lg">
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-semibold mb-2">First Name *</label>
+                      <input 
+                        type="text" 
+                        id="firstName" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                        required 
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-semibold mb-2">Last Name *</label>
+                      <input 
+                        type="text" 
+                        id="lastName" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                        required 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold mb-2">Email Address *</label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                        required 
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold mb-2">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        id="phone" 
+                        placeholder="+91 81471 25819"
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="eventType" className="block text-sm font-semibold mb-2">Event Type *</label>
+                      <select 
+                        id="eventType" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                        required
+                      >
+                        <option value="">Select Event Type</option>
+                        <option value="wedding">Wedding & Reception</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="birthday">Birthday Party</option>
+                        <option value="anniversary">Anniversary</option>
+                        <option value="conference">Conference & Seminar</option>
+                        <option value="product-launch">Product Launch</option>
+                        <option value="charity">Charity Event</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="eventDate" className="block text-sm font-semibold mb-2">Preferred Event Date</label>
+                      <input 
+                        type="date" 
+                        id="eventDate" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring" 
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="guestCount" className="block text-sm font-semibold mb-2">Expected Guest Count</label>
+                      <select 
+                        id="guestCount" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                      >
+                        <option value="">Select Guest Count</option>
+                        <option value="1-25">1-25 guests</option>
+                        <option value="26-50">26-50 guests</option>
+                        <option value="51-100">51-100 guests</option>
+                        <option value="101-200">101-200 guests</option>
+                        <option value="201-500">201-500 guests</option>
+                        <option value="500+">500+ guests</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="budget" className="block text-sm font-semibold mb-2">Budget Range</label>
+                      <select 
+                        id="budget" 
+                        className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring"
+                      >
+                        <option value="">Select Budget Range</option>
+                        <option value="under-1l">Under ₹1,00,000</option>
+                        <option value="1l-3l">₹1,00,000 - ₹3,00,000</option>
+                        <option value="3l-5l">₹3,00,000 - ₹5,00,000</option>
+                        <option value="5l-10l">₹5,00,000 - ₹10,00,000</option>
+                        <option value="10l-25l">₹10,00,000 - ₹25,00,000</option>
+                        <option value="25l+">₹25,00,000+</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold mb-2">Tell us about your vision *</label>
+                    <textarea 
+                      id="message" 
+                      rows={5}
+                      placeholder="Describe your event ideas, special requirements, venue preferences, or any questions you have..."
+                      className="w-full px-4 py-3 border border-input rounded-md bg-background focus:outline-none focus:ring-2 focus:ring-ring resize-none" 
+                      required 
+                    />
+                  </div>
+                  
+                  <div className="text-center">
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="bg-emerald hover:bg-emerald/90 text-white px-8"
+                    >
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Our Offices Section */}
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">

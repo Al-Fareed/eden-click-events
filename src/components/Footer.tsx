@@ -7,7 +7,7 @@ const Footer = () => {
   const navigate = useNavigate()
   const handleFeeConsultationBtn = () => {
     console.log("Hi");
-    
+
     navigate('/events')
   }
   return (
@@ -94,15 +94,15 @@ const Footer = () => {
               <p className="mt-1">Merchant Name: Mourise Dsouza</p>
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="/privacy" className="text-muted-foreground hover:text-emerald transition-colors">
+              <Link to="/privacy" className="text-muted-foreground hover:text-emerald transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="text-muted-foreground hover:text-emerald transition-colors">
+              </Link>
+              <Link to="/terms" className="text-muted-foreground hover:text-emerald transition-colors">
                 Terms of Service
-              </a>
-              <a href="/refund" className="text-muted-foreground hover:text-emerald transition-colors">
+              </Link>
+              <Link to="/refund" className="text-muted-foreground hover:text-emerald transition-colors">
                 Refund Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
